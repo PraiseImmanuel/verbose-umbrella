@@ -43,6 +43,10 @@ app.post("/api/email/send-email", async (req, res) => {
     // Send email
     const info = await transporter.sendMail(mailOptions);
     console.log("Email sent:", info.response);
+    // Set CORS headers
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "POST");
+    res.header("Access-Control-Allow-Headers", "Content-Type");
     res.status(200).send("Email sent successfully!");
   } catch (error) {
     console.error("Error sending email:", error, email);
