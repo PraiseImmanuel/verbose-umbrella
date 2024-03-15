@@ -19,8 +19,8 @@ app.post("/api/email/send-email", async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "tochimmanuel@gmail.com",
-        pass: "wualzxerpoaxbhgm",
+        user: "info.williamsobaedo@gmail.com",
+        pass: "whhohfsbcqccspli",
       },
     });
 
@@ -29,7 +29,7 @@ app.post("/api/email/send-email", async (req, res) => {
     const pdfAttachment = fs.readFileSync(pdfFilePath);
 
     const mailOptions = {
-      from: "tochimmanuel@gmail.com",
+      from: "info.williamsobaedo@gmail.com",
       to: email,
       subject: "Purchase of Ebook Sucessfully",
       text: "Congratulations",
